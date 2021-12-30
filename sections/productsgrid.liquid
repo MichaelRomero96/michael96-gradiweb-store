@@ -1,0 +1,25 @@
+<h1>
+  soy seccion 1
+</h1>
+<h1>test 2</h1>
+{%- for product in collections.gradi-collection.products -%}
+  {{ product.title }}
+{%- endfor -%}
+{% comment %} {% schema %}
+   {
+ 	"name": "productsgrid",
+ 	"tag": "section",
+ 	"class": "productsgrid",
+ 	"settings": [],
+ 	"blocks": [{
+ 		"name": "announcement",
+ 		"type": "text",
+ 		"settings": [{
+ 			"type": "text",
+ 			"id": "heading",
+ 			"default": "Welcome to our store",
+ 			"label": "Heading"
+ 		}]
+ 	}]
+ }
+{% endschema %} {% endcomment %}
