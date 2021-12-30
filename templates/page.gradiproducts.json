@@ -14,7 +14,7 @@
         "show_view_all": true,
         "swipe_on_mobile": false,
         "image_ratio": "adapt",
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "add_image_padding": false,
         "show_image_outline": true,
         "show_vendor": false,
