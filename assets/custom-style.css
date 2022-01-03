@@ -8,6 +8,7 @@
   display: flex;
   min-width: 100vh;
   justify-content: center;
+  margin: 0 200px;
 }
 
 .card {
@@ -56,7 +57,6 @@
 
 .variant-container {
   display: flex;
-  
   justify-content: center;
   position: relative;
 }
