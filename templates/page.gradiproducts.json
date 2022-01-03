@@ -1,12 +1,12 @@
 {
-    "sections": {
-        "productsgrid": {
-            "type": "productsgrid",
-            "settings": {}
-        }
-    },
-    "order": [
-        "productsgrid",
-        "164089756376d05347"
-    ]
+  "sections": {
+    "productsgrid": {
+      "type": "productsgrid",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "productsgrid"
+  ]
 }
