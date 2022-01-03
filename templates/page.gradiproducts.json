@@ -3,6 +3,7 @@
     "productsgrid": {
       "type": "productsgrid",
       "settings": {
+        "collection": "gradi-collection"
       }
     }
   },
