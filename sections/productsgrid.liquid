@@ -1,12 +1,37 @@
+{{ 'custom-style.css' | asset_url | stylesheet_tag }}
+{%- assign collection = collections[section.settings.collection] -%}
+<h1 class='title'>GradiStore</h1>
+
+<div class="main-container">
+  {% for product in collection.products %}
+  {%- assign featured_image = product.selected_or_first_available_variant.featured_image | default:
+  product.featured_image
+  -%}
+  <div class='card'>
+    <div>
+      <img class="img" src="{{ featured_image | img_url: 'master' }}" />
+      <div class="variant-container">
+        {% for variant in product.variants %}
+        <span id="{{variant.id}}" class='variant-preview'>{{variant.title}}</span>
+        {% endfor %}
+      </div>
+    </div>
+    <h5 class='card-title'>{{product.title}}</h5>
+    <h6 class="card-description">{{product.description}}</h6>
+  </div>
+  {% endfor %}
+</div>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "ProductsGrid",
+    "class": "spaced-section",
+    "settings": [
+      {
+        "id": "collection",
+        "type": "collection",
+        "label": "Chose a collection"
+      }
+    ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
