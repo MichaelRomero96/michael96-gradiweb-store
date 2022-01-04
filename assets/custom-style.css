@@ -6,17 +6,18 @@
 
 .main-container {
   display: flex;
-  min-width: 100vh;
+  /*  min-width: 100vh; */
   justify-content: center;
-  margin: 0 200px;
+  /* margin: 0 200px; */
+  /* background-color: red; */
 }
 
 .card {
-  max-width: 400px;
-  /*   background-color: red; */
+  max-width: 50%;
+  /* background-color: red; */
   margin: 15px;
-  display: block;
-  justify-content: center;
+  /*   display: block;
+  justify-content: center; */
 }
 
 .img {
@@ -25,6 +26,10 @@
   width: 300px;
   height: 300px;
   transition: transform 0.2s;
+}
+
+.img-hide {
+  display: none;
 }
 
 .img:hover {

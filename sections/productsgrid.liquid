@@ -6,13 +6,24 @@
 <div class="main-container">
   {% for product in collection.products %}
   <div class='card'>
-    <div>
-      <img class="img" src="{{ product.variants[forloop.index0].image.src | img_url: 'master' }}" />
-      <div class="variant-container">
-        {% for variant in product.variants %}
-        <span id="{{variant.id}}" class='variant-preview'>{{variant.title}}</span>
-        {% endfor %}
-      </div>
+    {% for variant in product.variants %}
+    {% if forloop.index0 == 0 %}
+    <img id="img_1" idProduct="{{product.id}}" class="img"
+      src="{{ product.variants[0].image.src | img_url: 'master' }}" />
+    <img id="img_2" idProduct="{{product.id}}" class="img img-hide"
+      src="{{ product.variants[1].image.src | img_url: 'master' }}" />
+    <img id="img_3" idProduct="{{product.id}}" class="img img-hide"
+      src="{{ product.variants[2].image.src | img_url: 'master' }}" />
+    <img id="img_4" idProduct="{{product.id}}" class="img img-hide"
+      src="{{ product.variants[3].image.src | img_url: 'master' }}" />
+    {% endif %}
+    {% endfor %}
+    <!-- <img class="img" src="{{ product.variants[forloop.index0].image.src | img_url: 'master' }}" /> -->
+    <div class="variant-container">
+      {% for variant in product.variants %}
+      <span id="variant-btn" id-variant="{{variant.id}}" id-product="{{product.id}}" variant-index="{{forloop.index0}}"
+        class='variant-preview'>{{variant.title}}</span>
+      {% endfor %}
     </div>
     <h5 class='card-title'>{{product.title}}</h5>
     <h6 class="card-description">{{product.description}}</h6>
