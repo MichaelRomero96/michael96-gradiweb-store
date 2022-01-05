@@ -1,5 +1,3 @@
-
-
 .main-container {
   display: grid;
   margin: 50px;
@@ -12,7 +10,7 @@
   margin: 15px;
 }
 
-.img {
+.product-img {
   margin: 10px 0;
   object-fit: contain;
   width: 100%;
@@ -24,50 +22,123 @@
   display: none;
 }
 
-.img:hover {
+.product-img:hover {
   transform: scale(1.1);
 }
 
 .card-title {
   text-align: center;
+  color: rgb(58, 58, 58);
   margin: 0;
 }
 .card-description {
   text-align: center;
-  color: rgb(80, 75, 75);
-  font-size: 14px;
+  color: rgb(143, 140, 140);
+  font-size: 16px;
   margin: 5px;
 }
 
 .variant-preview {
-  content: "";
   padding: 3px;
   min-width: 10px;
   min-height: 10px;
-  background-color: gray;
-  color: white;
+  color: purple;
   border-radius: 2px;
   font-size: 16px;
-  border: gray 1px solid;
+  border: purple 1px solid;
   cursor: pointer;
-  margin: 5px auto;
+  margin: 5px 2px;
+}
+
+.variant-preview:hover {
+  content: "";
+  padding: 3px;
+  min-width: 20px;
+  min-height: 10px;
+  color: purple;
+  background-color: rgb(253, 214, 253);
+  border-radius: 2px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px 2px;
 }
 
 .variant-container {
   width: 80%;
   min-height: 50px;
   margin: auto;
-  display: block;
+  display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
 }
 
-.cart-btn{
-  margin: 5% 20%;
+.add_to_cart_btn {
+  margin: 5% 30%;
   padding: 2px;
   text-align: center;
   color: white;
   background-color: purple;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.add_to_cart_btn:hover {
+  margin: 5% 30%;
+  padding: 2px;
+  text-align: center;
+  color: white;
+  background-color: rgba(128, 0, 128, 0.589);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* minicart */
+
+.custom-minicart-container {
+  position: fixed;
+  right: -100vh;
+  width: 80vh;
+  height: 100vh;
+  background: white;
+  -webkit-animation: slide 0.5s forwards;
+  animation: slide 0.5s forwards;
+  z-index: 1;
+  border-left: rgb(218, 217, 217) 1px solid;
+  padding: 0 30px;
+}
+
+.custom-minicart-container-hide {
+  display: none;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    right: 0;
+  }
+}
+
+.cart-title {
+  text-align: center;
+  font-size: 40px;
+  color: rgb(92, 92, 92);
+}
+.empty-cart-msg {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(92, 92, 92);
+}
+
+.custom-minicart-list-img {
+  width: 200px;
+  height: 150px;
 }

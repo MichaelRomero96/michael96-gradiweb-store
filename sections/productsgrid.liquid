@@ -4,13 +4,13 @@
   <div class='card'>
     {% for variant in product.variants %}
     {% if forloop.index0 == 0 %}
-    <img id="img_1" id_product="{{product.id}}" class="img"
+    <img id="img_0" index="0" id_product="{{product.id}}" title_product="{{product.title}}" class="product-img"
       src="{{ product.variants[0].image.src | img_url: 'master' }}" />
-    <img id="img_2" id_product="{{product.id}}" class="img img-hide"
+    <img id="img_1" index="1" id_product="{{product.id}}" title_product="{{product.title}}" class="product-img img-hide"
       src="{{ product.variants[1].image.src | img_url: 'master' }}" />
-    <img id="img_3" id_product="{{product.id}}" class="img img-hide"
+    <img id="img_2" index="2" id_product="{{product.id}}" title_product="{{product.title}}" class="product-img img-hide"
       src="{{ product.variants[2].image.src | img_url: 'master' }}" />
-    <img id="img_4" id_product="{{product.id}}" class="img img-hide"
+    <img id="img_3" index="3" id_product="{{product.id}}" title_product="{{product.title}}" class="product-img img-hide"
       src="{{ product.variants[3].image.src | img_url: 'master' }}" />
     {% endif %}
     {% endfor %}
@@ -23,7 +23,7 @@
     <h5 class='card-title'>{{product.title}}</h5>
     <h6 class="card-description">{{product.description}}</h6>
     <h6 class="card-description">{{product.price}}</h6>
-    <div class='cart-btn'>Add to Cart</div>
+    <div id='{{product.id}}' class='add_to_cart_btn'>Add to Cart</div>
   </div>
   {% endfor %}
 </div>
