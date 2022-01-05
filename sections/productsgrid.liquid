@@ -8,20 +8,20 @@
   <div class='card'>
     {% for variant in product.variants %}
     {% if forloop.index0 == 0 %}
-    <img id="img_1" idProduct="{{product.id}}" class="img"
+    <img id="img_1" id_product="{{product.id}}" class="img"
       src="{{ product.variants[0].image.src | img_url: 'master' }}" />
-    <img id="img_2" idProduct="{{product.id}}" class="img img-hide"
+    <img id="img_2" id_product="{{product.id}}" class="img img-hide"
       src="{{ product.variants[1].image.src | img_url: 'master' }}" />
-    <img id="img_3" idProduct="{{product.id}}" class="img img-hide"
+    <img id="img_3" id_product="{{product.id}}" class="img img-hide"
       src="{{ product.variants[2].image.src | img_url: 'master' }}" />
-    <img id="img_4" idProduct="{{product.id}}" class="img img-hide"
+    <img id="img_4" id_product="{{product.id}}" class="img img-hide"
       src="{{ product.variants[3].image.src | img_url: 'master' }}" />
     {% endif %}
     {% endfor %}
     <!-- <img class="img" src="{{ product.variants[forloop.index0].image.src | img_url: 'master' }}" /> -->
     <div class="variant-container">
       {% for variant in product.variants %}
-      <span id="variant-btn" id-variant="{{variant.id}}" id-product="{{product.id}}" variant-index="{{forloop.index0}}"
+      <span id="variant-btn" variant_id="{{variant.id}}" id_product="{{product.id}}" variant_index="{{forloop.index0}}"
         class='variant-preview'>{{variant.title}}</span>
       {% endfor %}
     </div>
