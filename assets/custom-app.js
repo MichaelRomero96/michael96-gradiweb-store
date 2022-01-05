@@ -36,7 +36,6 @@ const variantElementButton = new productVariants('#variant-btn');
 
 window.addEventListener('DOMContentLoaded', (e) => {
     variantElementButton.variantListener();
-    variantBtnProduct = document.querySelector('#variant-btn');
 });
 
 

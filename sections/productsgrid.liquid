@@ -1,8 +1,4 @@
-{{ 'custom-style.css' | asset_url | stylesheet_tag }}
-{{ 'custom-app.js' | asset_url | script_tag }}
 {%- assign collection = collections[section.settings.collection] -%}
-<h1 class='title'>GradiStore</h1>
-
 <div class="main-container">
   {% for product in collection.products %}
   <div class='card'>
@@ -18,7 +14,6 @@
       src="{{ product.variants[3].image.src | img_url: 'master' }}" />
     {% endif %}
     {% endfor %}
-    <!-- <img class="img" src="{{ product.variants[forloop.index0].image.src | img_url: 'master' }}" /> -->
     <div class="variant-container">
       {% for variant in product.variants %}
       <span id="variant-btn" variant_id="{{variant.id}}" id_product="{{product.id}}" variant_index="{{forloop.index0}}"
@@ -28,6 +23,7 @@
     <h5 class='card-title'>{{product.title}}</h5>
     <h6 class="card-description">{{product.description}}</h6>
     <h6 class="card-description">{{product.price}}</h6>
+    <div class='cart-btn'>Add to Cart</div>
   </div>
   {% endfor %}
 </div>

@@ -8,7 +8,8 @@
   <meta name="theme-color" content="">
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-
+  {{ 'custom-style.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-app.js' | asset_url | script_tag }}
   {%- if settings.favicon != blank -%}
   <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
   {%- endif -%}
@@ -146,7 +147,7 @@
   </a>
 
   {% section 'announcement-bar' %}
-  <!-- {% section 'header' %} -->
+  {% section 'header' %}
   <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
     {{ content_for_layout }}
   </main>

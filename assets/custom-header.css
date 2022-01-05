@@ -1,0 +1,38 @@
+.custom-header-container {
+  height: 80px;
+  min-width: 100vh;
+  border-bottom: rgb(218, 218, 218) 1px solid;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 0 30px;
+}
+
+.custom-header-title {
+  font-size: 50px;
+  color: rgb(105, 105, 105);
+  flex-grow: 1;
+}
+
+.custom-header-cart-btn {
+  padding-top: 30px;
+  min-height: 100%;
+  color: rgb(105, 105, 105);
+  cursor: pointer;
+}
+
+.custom-header-cart-btn:hover {
+  border-bottom: purple 5px solid;
+}
+
+.custom-header-cart-btn-selected {
+  padding-top: 30px;
+  min-height: 100%;
+  color: rgb(105, 105, 105);
+  cursor: pointer;
+  border-bottom: purple 5px solid;
+}
+
+.mini-cart-container {
+  position: fixed;
+}

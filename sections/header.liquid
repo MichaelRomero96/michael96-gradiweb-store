@@ -1,1 +1,8 @@
-<h1>this is a header</h1>
+{{ 'custom-header.css' | asset_url | stylesheet_tag }}
+
+<div class='custom-header-container'>
+    <h1 class="custom-header-title">GradiStore</h1>
+    <div class="custom-header-cart-btn">
+        Cart
+    </div>
+</div>
