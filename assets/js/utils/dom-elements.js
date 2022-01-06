@@ -4,7 +4,7 @@
 */
 export const domElements = () => {
     const elements = {
-        $productButton: document.querySelector('#productButton')
+        $productButton: document.querySelector('#product_button')
     }
 
     return elements
