@@ -402,7 +402,7 @@
             'add-to-cart-form' -%}
             <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
             <div class="product-form__buttons">
-              <button id="product_button" data-variant-id="{{ product.variants[0].id }}" type="submit" name="add"
+              <button id="product_button" data-variant-id="{{ product.variants[0].id }}" type="button" name="add"
                 class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
                 {% if product.selected_or_first_available_variant.available==false %}disabled{% endif %}>
                 <span>
@@ -483,13 +483,6 @@
 
       <div class="product-media-modal__content" role="document" aria-label="{{ 'products.modal.label' | t }}"
         tabindex="0">
-        {%- liquid
-        if product.selected_or_first_available_variant.featured_media != null
-        assign media = product.selected_or_first_available_variant.featured_media
-        render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image:
-        section.settings.hide_variants
-        endif
-        -%}
 
         {%- for media in product.media -%}
         {%- liquid

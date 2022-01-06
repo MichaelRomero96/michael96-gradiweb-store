@@ -1,7 +1,15 @@
-import API from "../../services/api"
+import API from "../../services/api.js"
+import { domElements } from "../../utils/dom-elements.js"
 
 export class Product {
-    async addToCart(event) {
+    init() {
+        console.log('entrando')
+        console.log(domElements().$productButton)
+        domElements().$productButton.addEventListener('click', this.addToCart)
+    }
+    addToCart = async (event) => {
+        console.log('addtocart')
+        debugger
         console.log(event.target.dataset)
         const variantId = event.target.dataset.variantId
         const items = [
