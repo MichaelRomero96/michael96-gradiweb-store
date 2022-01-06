@@ -148,7 +148,13 @@
 
   {% section 'announcement-bar' %}
   {% section 'header' %}
-  {% section 'custom-minicart' %}
+  <section id="custom_minicart" class="custom-minicart-container custom-minicart-container-hide">
+    <h2 class="cart-title ">Shopping Cart</h2>
+    <!-- <div class="empty-cart-msg">Your Shopping Cart is empty</div> -->
+    <div id="custom_minicart_container">
+      {% section 'side-cart' %}
+    </div>
+  </section>
   <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
     {{ content_for_layout }}
   </main>
