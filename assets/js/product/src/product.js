@@ -2,6 +2,7 @@ import API from "../../services/api"
 
 export class Product {
     async addToCart(event) {
+        console.log(event.target.dataset)
         const variantId = event.target.dataset.variantId
         const items = [
             {
