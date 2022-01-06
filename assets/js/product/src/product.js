@@ -5,11 +5,10 @@ export class Product {
     init() {
         console.log('entrando')
         console.log(domElements().$productButton)
-        domElements().$productButton.addEventListener('click', this.addToCart)
+        domElements().$productButton.addEventListener('click', (e) => this.addToCart(e))
     }
     addToCart = async (event) => {
-        console.log('addtocart')
-        debugger
+        console.log(event)
         console.log(event.target.dataset)
         const variantId = event.target.dataset.variantId
         const items = [

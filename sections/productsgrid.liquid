@@ -16,14 +16,17 @@
     {% endfor %}
     <div class="variant-container">
       {% for variant in product.variants %}
-      <span id="variant-btn" variant_id="{{variant.id}}" id_product="{{product.id}}" variant_index="{{forloop.index0}}"
-        class='variant-preview'>{{variant.title}}</span>
+      <span data-variant-id="{{ product.variants[0].id }}" id="variant-btn" variant_id="{{variant.id}}"
+        id_product="{{product.id}}" variant_index="{{forloop.index0}}" class='variant-preview'>{{variant.title}}</span>
       {% endfor %}
     </div>
     <h5 class='card-title'>{{product.title}}</h5>
     <h6 class="card-description">{{product.description}}</h6>
     <h6 class="card-description">{{product.price}}</h6>
-    <div id='{{product.id}}' class='add_to_cart_btn'>Add to Cart</div>
+    {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type:
+    'add-to-cart-form' -%}
+    <button id='product_button' type="submit" class='add_to_cart_btn'>Add to Cart</button>
+    {%- endform -%}
   </div>
   {% endfor %}
 </div>
