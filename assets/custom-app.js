@@ -37,7 +37,7 @@ class ProductVariants {
 };
 
 //variant button instance
-const variantElementButton = new ProductVariants('#variant-btn');
+const variantElementButton = new ProductVariants('.variant-preview');
 
 //minicart
 class MiniCartUI {
@@ -124,13 +124,10 @@ class AddProductsToMiniCart {
     };
 };
 
-const addProductsToMiniCart = new AddProductsToMiniCart('.add_to_cart_btn');
-
 //DOM-Content general listener
 window.addEventListener('DOMContentLoaded', (e) => {
     variantElementButton.eventListener();
     cartSettings.eventListener();
-    addProductsToMiniCart.eventListener();
 });
 
 

@@ -2,9 +2,12 @@
     <div class="side-cart__body">
         {% if cart.item_count > 0 %}
         {% for item in cart.items %}
-            {% render 'cart-product'
-                title: item.title
-            %}
+        {% render 'cart-product'
+        title: item.title
+        image: item.image
+        quantity: item.quantity
+        variant_id: item.variant_id
+        %}
         {% endfor %}
         {% else %}
         <div class="empty-side-cart">

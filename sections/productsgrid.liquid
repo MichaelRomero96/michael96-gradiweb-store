@@ -4,41 +4,46 @@
   <div class='card'>
     {% for variant in product.variants %}
     {% if forloop.index0 == 0 %}
-    <img id="img_0" index="0" id_product="{{product.id}}" title_product="{{product.title}}" class="product-img"
+    <img id="img_0" index="0" id_product="{{product.id}}" data-product-id="{{product.id}}"
+      data-variant-id="{{ product.variants[0].id}}" title_product="{{product.title}}" class="product-img"
       src="{{ product.variants[0].image.src | img_url: 'master' }}" />
-    <img id="img_1" index="1" id_product="{{product.id}}" title_product="{{product.title}}" class="product-img img-hide"
+    <img id="img_1" index="1" id_product="{{product.id}}" data-product-id="{{product.id}}"
+      data-variant-id="{{product.variants[1].id }}" title_product="{{product.title}}" class="product-img img-hide"
       src="{{ product.variants[1].image.src | img_url: 'master' }}" />
-    <img id="img_2" index="2" id_product="{{product.id}}" title_product="{{product.title}}" class="product-img img-hide"
+    <img id="img_2" index="2" id_product="{{product.id}}" data-product-id="{{product.id}}"
+      data-variant-id="{{product.variants[2].id }}" title_product="{{product.title}}" class="product-img img-hide"
       src="{{ product.variants[2].image.src | img_url: 'master' }}" />
-    <img id="img_3" index="3" id_product="{{product.id}}" title_product="{{product.title}}" class="product-img img-hide"
+    <img id="img_3" index="3" id_product="{{product.id}}" data-product-id="{{product.id}}"
+      data-variant-id="{{product.variants[3].id}}" title_product="{{product.title}}" class="product-img img-hide"
       src="{{ product.variants[3].image.src | img_url: 'master' }}" />
     {% endif %}
     {% endfor %}
     <div class="variant-container">
       {% for variant in product.variants %}
-      <span id='product-button' data-variant-id="{{ variant.id }}" variant_id="{{variant.id}}"
-        id_product="{{product.id}}" variant_index="{{forloop.index0}}" class='variant-preview'>{{variant.title}}
+      <span id='product-variant-button' data-variant-id="{{ variant.id }}" data-product-id="{{ product.id }}"
+        variant_id="{{variant.id}}" id_product="{{product.id}}" variant_index="{{forloop.index0}}"
+        class='variant-preview'>{{variant.title}}
       </span>
       {% endfor %}
     </div>
     <h5 class='card-title'>{{product.title}}</h5>
     <h6 class="card-description">{{product.description}}</h6>
     <h6 class="card-description">{{product.price | money}}</h6>
-    <button id="action-button" type="submit" class='add_to_cart_btn'>Add to Cart</button>
+    <button data-product-id="{{product.id}}" type="submit" class='add_to_cart_btn'>Add to Cart</button>
   </div>
   {% endfor %}
 </div>
 
 {% schema %}
-  {
-    "name": "ProductsGrid",
-    "class": "spaced-section",
-    "settings": [
-      {
-        "id": "collection",
-        "type": "collection",
-        "label": "Chose a collection"
-      }
-    ]
-  }
+{
+"name": "ProductsGrid",
+"class": "spaced-section",
+"settings": [
+{
+"id": "collection",
+"type": "collection",
+"label": "Chose a collection"
+}
+]
+}
 {% endschema %}

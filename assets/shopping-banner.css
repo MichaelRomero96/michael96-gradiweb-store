@@ -1,0 +1,16 @@
+.shopping-banner-container {
+  padding: 50px;
+  background-color: white;
+  margin-top: 40vh;
+  margin-left: 20vh;
+  position: fixed;
+  z-index: 20;
+  border: purple 2px solid;
+  border-radius: 25px;
+}
+
+.shopping-banner-info {
+  font-size: 30px;
+  color: purple;
+  text-align: center;
+}

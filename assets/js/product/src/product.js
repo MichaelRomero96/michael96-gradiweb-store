@@ -4,11 +4,18 @@ import { domElements } from "../../utils/dom-elements.js"
 export class Product {
     init() {
         console.log('entrando')
-        console.log(domElements().$actionButton)
-        domElements().$actionButton.addEventListener('click', (e) => {
-            e.preventDefault()
-            const variantId = domElements().$productButton.dataset.variantId
-            this.addToCart(variantId)
+        const listElements = Array.from(domElements().$actionButtons)
+        console.log(listElements)
+        listElements.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault()
+                console.log(button.dataset.productId)
+                const allImages = Array.from(domElements().$productImages)
+                const activeImage = allImages.filter(image => image.classList.length !== 2)
+                const activeProduct = activeImage.filter(productImage => productImage.dataset.productId === button.dataset.productId)
+                const variantId = activeProduct[0].dataset.variantId
+                this.addToCart(variantId)
+            })
         })
     }
     addToCart = async (variantId) => {

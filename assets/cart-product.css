@@ -1,0 +1,24 @@
+.main-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px rgb(168, 139, 168) solid;
+  border-radius: 5px;
+  margin: 15px;
+}
+.card-product-title {
+  color: rgb(85, 84, 84);
+  font-size: 60px;
+}
+.cart-product-info {
+  min-width: 50%;
+  margin: 5%;
+  text-align: center;
+}
+
+.cart-product-btn {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: purple;
+  padding: 5px;
+}

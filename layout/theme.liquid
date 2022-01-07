@@ -9,10 +9,13 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
   {{ 'custom-style.css' | asset_url | stylesheet_tag }}
+  {{ 'shopping-banner.css' | asset_url | stylesheet_tag }}
   {{ 'custom-app.js' | asset_url | script_tag }}
   {%- if settings.favicon != blank -%}
   <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
   {%- endif -%}
+  <script src="https://kit.fontawesome.com/371490ce59.js" crossorigin="anonymous"></script>
+
 
   {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
@@ -148,10 +151,15 @@
 
   {% section 'announcement-bar' %}
   {% section 'header' %}
+  <!-- <div class="shopping-banner-container">
+    {% section 'shopping-banner' %}
+  </div> -->
+
   <section id="custom_minicart" class="custom-minicart-container custom-minicart-container-hide">
-    <h2 class="cart-title ">Shopping Cart</h2>
+
     <!-- <div class="empty-cart-msg">Your Shopping Cart is empty</div> -->
     <div id="custom_minicart_container">
+      <h2 class="cart-title ">Shopping Cart</h2>
       {% section 'side-cart' %}
     </div>
   </section>

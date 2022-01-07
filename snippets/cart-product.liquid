@@ -1,3 +1,20 @@
-<article>
-    <p>{{ title }}</p>
+{{ 'cart-product.css' | asset_url | stylesheet_tag }}
+<article class="main-article">
+    <div class="cart-product-info">
+        <p class="cart-product-title">{{ title }}</p>
+        <p>Quantity: {{ quantity }}</p>
+        <span>
+            <span id="delete_cart_btn" data-variant-id="{{ variant_id }}" style="color: white; margin-right: 5px;" class="cart-product-btn">
+                <i class="fas fa-minus"></i>
+                Delete
+            </span>
+            <span id="add_cart_btn" data-variant-id="{{ variant_id }}" style="color: white;" class="cart-product-btn">
+                Add
+                <i class="fas fa-plus-circle"></i>
+            </span>
+        </span>
+    </div>
+    <figure style="margin: auto;">
+        {{ image | image_url: width: 150, height: 150 | image_tag: srcset: nil }}
+    </figure>
 </article>
