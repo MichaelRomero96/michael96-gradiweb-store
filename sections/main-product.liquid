@@ -402,7 +402,7 @@
             'add-to-cart-form' -%}
             <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
             <div class="product-form__buttons">
-              <button id="product_button" data-variant-id="{{ product.variants[0].id }}" type="button" name="add"
+              <button  data-variant-id="{{ product.variants[0].id }}" type="button" name="add"
                 class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
                 {% if product.selected_or_first_available_variant.available==false %}disabled{% endif %}>
                 <span>
