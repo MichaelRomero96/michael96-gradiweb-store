@@ -4,13 +4,14 @@ import { domElements } from "../../utils/dom-elements.js"
 export class Product {
     init() {
         console.log('entrando')
-        console.log(domElements().$productButton)
-        domElements().$productButton.addEventListener('click', (e) => this.addToCart(e))
+        console.log(domElements().$actionButton)
+        domElements().$actionButton.addEventListener('click', (e) => {
+            e.preventDefault()
+            const variantId = domElements().$productButton.dataset.variantId
+            this.addToCart(variantId)
+        })
     }
-    addToCart = async (event) => {
-        console.log(event)
-        console.log(event.target.dataset)
-        const variantId = event.target.dataset.variantId
+    addToCart = async (variantId) => {
         const items = [
             {
                 id: Number(variantId),
@@ -19,5 +20,5 @@ export class Product {
         ]
         const res = await API.addToCart(items)
         console.log(res)
-    }
-}
+    };
+};
