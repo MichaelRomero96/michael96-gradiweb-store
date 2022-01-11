@@ -75,7 +75,7 @@ class API {
         }
     }
 
-    async getfulfillmentCountData() {
+    async getCustomersCountData() {
 
         try {
             const requestOptions = {
@@ -83,10 +83,33 @@ class API {
                 redirect: 'follow',
                 mode: 'no-cors'
             }
-            const response = await fetch(`https://0d84-190-146-238-178.ngrok.io/getCustomersCount`, requestOptions)
-            console.log(response.json())
+            const res = await fetch(`http://localhost:4001/getCustomersCount`, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            console.log(await res.json())
         } catch (error) {
-            console.error(error)
+            console.log(error)
+        }
+    }
+
+    async getFulfillmentOrdersCountData() {
+
+        try {
+            const requestOptions = {
+                method: 'GET',
+                redirect: 'follow',
+                mode: 'no-cors'
+            }
+            const res = await fetch(`http://localhost:4001/getFulfillmentOrdersCount`, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            console.log(await res.json())
+        } catch (error) {
+            console.log(error)
         }
     }
 }

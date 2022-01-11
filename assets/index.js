@@ -1,9 +1,11 @@
-import { Product, FulFillmentOrderCount } from "./js/product/index.js"
+import { Product, CustomersCount, FulfillmentOrdersCount } from "./js/product/index.js"
 
 window.addEventListener('DOMContentLoaded', () => {
     const product = new Product()
     product.init()
-    const fulfillmentOrderCount = new FulFillmentOrderCount()
-    console.log('entrando')
-    fulfillmentOrderCount.init()
+    const customersCount = new CustomersCount()
+    const fulfillmentOrdersCount = new FulfillmentOrdersCount()
+    fulfillmentOrdersCount.init()
+    console.log('entrando,eddsited')
+    customersCount.init()
 })
