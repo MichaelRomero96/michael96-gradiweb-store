@@ -74,6 +74,21 @@ class API {
             console.error(`Error: ${error.message}`)
         }
     }
+
+    async getfulfillmentCountData() {
+
+        try {
+            const requestOptions = {
+                method: 'GET',
+                redirect: 'follow',
+                mode: 'no-cors'
+            }
+            const response = await fetch(`https://0d84-190-146-238-178.ngrok.io/getCustomersCount`, requestOptions)
+            console.log(response.json())
+        } catch (error) {
+            console.error(error)
+        }
+    }
 }
 
 export default new API()
